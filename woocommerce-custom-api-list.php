@@ -20,6 +20,7 @@ define( 'WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 // Include necessary files.
 require_once WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR . 'includes/class-woocommerce-custom-api-admin-settings.php';
 require_once WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR . 'includes/class-woocommerce-custom-api-settings.php';
+require_once WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR . 'includes/class-woocommerce-custom-api-api.php';
 
 // Initialize the plugin.
 function user_integration_api_init() {
