@@ -51,7 +51,7 @@ class WooCommerce_Custom_API_Settings {
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="preferences"><?php _e( 'Preferences:', 'woocommerce_custom_api' ); ?></label>
                 <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="preferences" id="preferences" value="<?php echo esc_attr( $preferences ); ?>">
-                <small>Enter a comma-separated list of values</small>
+                <small><?php _e( 'Enter a comma-separated list of values', 'woocommerce_custom_api' ); ?></small>
             </p>
             <p>
                 <input type="submit" name="save_preferences" value="<?php _e( 'Save Changes', 'woocommerce_custom_api' ); ?>" class="button">
