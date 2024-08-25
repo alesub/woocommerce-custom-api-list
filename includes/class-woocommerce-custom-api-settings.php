@@ -43,6 +43,26 @@ class WooCommerce_Custom_API_Settings {
             wc_print_notice( __( 'Preferences updated.', 'woocommerce_custom_api' ), 'success' );
         }
 
+        // User API output
+
+        $api_data = WooCommerce_Custom_API_API::get_data_for_user( $user_id );
+
+        if ( $api_data ) {
+            // Output the data.
+            echo '<div class="woocommerce-custom-api-data">';
+            echo '<h3>' . __( 'API Results', 'woocommerce_custom_api' ) . '</h3>';
+            echo '<ul>';
+            foreach ( $api_data as $item ) {
+                echo '<li>' . esc_html( $item ) . '</li>';
+            }
+            echo '</ul>';
+            echo '</div>';
+        } else {
+            echo '<p>' . __( 'No data available.', 'woocommerce_custom_api' ) . '</p>';
+        }
+
+        // User preferences form
+
         echo '<h3>' . __( 'API Preferences', 'woocommerce_custom_api' ) . '</h3>';
         ?>
         <form method="post" action="" class="edit-account">
