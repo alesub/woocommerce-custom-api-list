@@ -21,6 +21,7 @@ define( 'WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 require_once WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR . 'includes/class-woocommerce-custom-api-admin-settings.php';
 require_once WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR . 'includes/class-woocommerce-custom-api-settings.php';
 require_once WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR . 'includes/class-woocommerce-custom-api-api.php';
+require_once WOOCOMMERCE_CUSTOM_API_PLUGIN_DIR . 'includes/class-woocommerce-custom-api-widget.php';
 
 // Initialize the plugin.
 function user_integration_api_init() {
@@ -33,6 +34,10 @@ function user_integration_api_init() {
     $my_plugin_settings = new WooCommerce_Custom_API_Settings();
     $my_plugin_settings->init();
 
+    // Register the widget.
+    add_action( 'widgets_init', function() {
+        register_widget( 'WooCommerce_Custom_API_Widget' );
+    });
 }
 
 add_action( 'plugins_loaded', 'user_integration_api_init' );
